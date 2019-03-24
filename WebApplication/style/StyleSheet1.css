@@ -1,0 +1,61 @@
+﻿#searchBlock {
+    float: right;
+    position: relative;
+}
+#search {
+    width: 400px;
+    float: left
+}
+#buttonSearch {
+    float: right;
+}
+#container {
+    width: 650px;
+    margin-top: 20px;
+}
+
+#newsImageConponentsImage {
+    height: 200px;
+    width: 150px;
+    float: left;
+}
+#newsImageConponentsInfo {
+    float: right;
+    height: 150px;
+    margin-left: 10px;
+    width: 400px;
+    color: burlywood;
+}
+#newsImageConponentsButton input{ 
+    height: 40px;
+    margin: 10px 0px 0px 590px;
+
+}
+#newsImage {
+    height: 330px;
+    width: 750px;
+    margin-left: 150px;
+    margin-top: 50px;
+    border: 2px solid indigo;
+    border-radius: 8px;
+
+}
+
+#nameBook {
+
+    margin-bottom: 20px;
+    color: chartreuse;
+     
+}
+#filter {
+    float: right;
+    margin-right: 15px;
+    margin-top: 50px;
+    width: 415px;
+
+}
+.buttonFilter {
+    color: darkmagenta;
+    width: 200px;
+    margin: 2px;
+}

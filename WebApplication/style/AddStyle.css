@@ -1,0 +1,53 @@
+﻿#nameBook {
+    width: 600px;
+    margin: 40px 15px;
+}
+
+#author {
+    width: 600px;
+    margin: 40px 15px;
+}
+#container {
+    margin-left: 30px;
+    width: 900px
+}
+#hangr {
+    width: 600px;
+    margin: 40px 15px 40px;
+}
+#annotation {
+    margin: 40px 15px;
+    width: 600px;
+    height: 500px;
+}
+#uploadPicturesBlock {
+    margin: 40px 15px;
+}
+#uploadFileBlock {
+    margin: 40px 15px;
+}
+
+#upload {
+    margin: 20px 140px;
+}
+#errorBlock {
+    margin: 40px;
+}
+.validationBlock {
+    width: 400px;
+}
+#side {
+    float: right;
+    color: gold;
+}
+#uploadPicturesBlock {
+    margin-left: 30px;
+    width: 520px;
+}
+#uploadFileBlock {
+    margin-left: 60px;
+    width: 490px;
+}
+body {
+    background-color: rgb(0,30,50);
+}
