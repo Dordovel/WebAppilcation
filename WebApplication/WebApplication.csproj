@@ -219,7 +219,6 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <Content Include="Pages\HomePage.aspx" />
-    <Content Include="Image\Home.svg" />
     <Content Include="style\AddStyle.css" />
     <Content Include="style\StyleSheet1.css" />
     <Content Include="style\WebForm1Css.css" />

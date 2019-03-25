@@ -139,11 +139,15 @@ namespace WebApplication
                 }
         }
 
+        //обработка нажатия кнопок фильтра
         protected void buttonFilter_OnClick(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            
-                foreach (var VARIABLE in _entitiesBook.Book)
+
+            foreach (var VARIABLE in _entitiesBook.Book)
+            {
+                
+                if (!button.Text.Trim().Contains("Все"))
                 {
                     if (VARIABLE.Жанр.TrimEnd().ToLower().Contains(button.Text.Trim().ToLower()))
                     {
@@ -151,6 +155,13 @@ namespace WebApplication
                             VARIABLE.Автор);
                     }
                 }
+                else
+                {
+                    PrintBookMethod(VARIABLE.Название, VARIABLE.Обложка, VARIABLE.Id, VARIABLE.Жанр,
+                            VARIABLE.Автор);
+                }
+
+            }
         }
 
         //Находит все жанры книг,формирует массив неповторяющихся жанров и вывод кнопок в соответствии с найденным жанром
@@ -185,7 +196,14 @@ namespace WebApplication
                 }
 
             }
-            
+
+            Button button_all_hangre=new Button();
+            button_all_hangre.Text = "Все";
+            button_all_hangre.UseSubmitBehavior = false;
+            button_all_hangre.CssClass = "buttonFilter btn btn-outline-warning";
+            button_all_hangre.Click += buttonFilter_OnClick;
+            filter.Controls.Add(button_all_hangre);
+
 
             foreach (var VARIABLE in list)
             {
