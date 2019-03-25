@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Win32;
 using WebApplication.Models;
 using WebApplication.scripts;
+using System.Threading;
 
 namespace WebApplication
 {
@@ -15,6 +16,7 @@ namespace WebApplication
         {
 
             id = Request.QueryString["id"];
+
             if (string.IsNullOrEmpty(id))
             {
                 Response.Redirect("~/Pages/HomePage.aspx");
@@ -112,7 +114,6 @@ namespace WebApplication
         //Удаление книги из БД
         protected void delete_OnClick(object sender, EventArgs e)
         {
-            
             var temp = book.Book;
             var deleteBook = from book1 in temp
                 where book1.Id.ToString() == id
@@ -121,13 +122,22 @@ namespace WebApplication
 
             ClassCombine combine = new ClassCombine();
 
-            File.Delete(combine.combine(Server.MapPath(deleteBook.FirstOrDefault().Обложка)));
-            File.Delete(combine.combine(Server.MapPath(deleteBook.FirstOrDefault().Путь_к_Файлу)));
+            try
+            {
+
+                File.Delete(combine.combine(Server.MapPath(deleteBook.FirstOrDefault().Обложка)));
+                File.Delete(combine.combine(Server.MapPath(deleteBook.FirstOrDefault().Путь_к_Файлу)));
+                
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "MyScript", "<script language='javascript'>alert( 'Successful File delete' );</script>");
+                
+            }
+            catch (IOException exc)
+            {
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "MyScript", "<script language='javascript'>alert( 'Error File not deleted' );</script>");
+            }
 
             temp.RemoveRange(deleteBook);
             book.SaveChanges();
-
-            Response.Redirect("HomePage.aspx");
 
         }
     }

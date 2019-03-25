@@ -26,7 +26,7 @@
             annotation.keypress(function () {
 
                 var size = annotation.val().length;
-                    length.text(size+" / " + max_size);
+                    length.text((size+1)+" / " + max_size);
             });
         }
 
