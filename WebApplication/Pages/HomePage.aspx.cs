@@ -37,6 +37,7 @@ namespace WebApplication
             image.ImageUrl = imagePath.TrimEnd();
             image.Width = 150;
             image.Height = 200;
+            image.ID = "Image";
             
                 Panel p1 = new Panel();
                 p1.ID = "newsImageConponentsImage";
