@@ -17,25 +17,13 @@ $(document).ready(
 
     function ()
     {
-
         var image = $('img');
-
-        var infoPanel = $('[id=newsImageConponentsInfo]');
 
         for (var b = 0; b < image.length; ++b)
         {
             image.eq(b).mouseenter(
                 function () 
                 {
-                    alert(infoPanel.css("right"));
-
-                    infoPanel.eq(b).animate(
-                        {
-                            right:"+=100px"
-                        }
-                    );
-
-                    alert(infoPanel.css("right"));
 
                     $(this).animate(
                         {
@@ -43,18 +31,12 @@ $(document).ready(
                             width: "+=100px"
                         }
                     );
-                    
                 }
             );
 
             image.eq(b).mouseout(
                 function ()
                 {
-                    infoPanel.eq(b).animate(
-                        {
-                            right: "-=100px"
-                        }
-                    );
 
                     $(this).animate(
                         {
